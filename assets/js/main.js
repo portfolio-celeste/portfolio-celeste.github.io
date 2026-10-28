@@ -9,6 +9,19 @@
   window.addEventListener('load', function () { doc.classList.add('loaded'); });
   setTimeout(function () { doc.classList.add('loaded'); }, 1600); // filet de sécurité
 
+  /* Le grand nom tient toujours en entier dans sa colonne */
+  var fitHero = function () {
+    var h1 = document.querySelector('.hero h1');
+    if (!h1) return;
+    h1.style.fontSize = '';
+    var lines = h1.querySelectorAll('.line'), size = parseFloat(getComputedStyle(h1).fontSize), guard = 40;
+    var over = function () { return Array.prototype.some.call(lines, function (l) { var r = document.createRange(); r.selectNodeContents(l.firstElementChild || l); return r.getBoundingClientRect().width > l.clientWidth - 2; }); };
+    while (over() && guard-- > 0) { size -= 2; h1.style.fontSize = size + 'px'; }
+  };
+  fitHero();
+  window.addEventListener('resize', fitHero);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitHero);
+
   /* 2. Découpage des titres en mots (apparition mot par mot) */
   document.querySelectorAll('[data-split]').forEach(function (el) {
     var i = 0;
@@ -31,7 +44,7 @@
   });
 
   /* 3. Apparition au défilement */
-  var targets = document.querySelectorAll('.rv, .rv-img, .rule, [data-split], .collage');
+  var targets = document.querySelectorAll('.rv, .rv-img, .rule, [data-split]');
   if ('IntersectionObserver' in window && !reduce) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -49,6 +62,9 @@
   var parallax = document.querySelectorAll('[data-parallax]');
   var journeys = [];
   var stacks = [];
+  var collages = Array.prototype.slice.call(document.querySelectorAll('[data-collage]'));
+  var bubble = document.querySelector('.bubble');
+  var contactSec = document.getElementById('contact');
 
   function onScroll() {
     var y = window.scrollY;
@@ -66,6 +82,18 @@
       });
     }
     journeys.forEach(function (j) { j.update(); });
+    // collage : les photos arrivent éparpillées et s'assemblent au défilement
+    collages.forEach(function (c) {
+      if (reduce) { c.style.setProperty('--p', 1); return; }
+      var r = c.getBoundingClientRect(), vh = window.innerHeight;
+      var p = Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.8)));
+      p = 1 - Math.pow(1 - p, 3);
+      c.style.setProperty('--p', p.toFixed(3));
+    });
+    // bulle de contact : se retire quand on est déjà sur la partie contact
+    if (bubble && contactSec) {
+      bubble.classList.toggle('away', contactSec.getBoundingClientRect().top < window.innerHeight * 0.75);
+    }
     stacks.forEach(function (st) { st.update(); });
     ticking = false;
   }

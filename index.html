@@ -29,7 +29,7 @@
       <a href="#parcours">Parcours</a>
       <a href="#competences">Compétences</a>
       <a href="#contenus">Contenus</a>
-      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">Contact</a>
     </nav>
     <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
   </div>
@@ -73,7 +73,6 @@
       <div class="badge">CL.</div>
     </div>
   </div>
-  <div class="scroll-hint" aria-hidden="true"><i></i>Défiler</div>
 </section>
 
 <!-- ============ BANDEAU ============ -->
@@ -142,7 +141,7 @@
       <div class="rule"></div>
     </div>
     <div class="skills">
-      <div class="skill rv feat" style="--d:0s"><span class="sk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><h3>Direction<br>artistique</h3><p>Concept, moodboard, DA, storytelling visuel</p><img class="sk-img" src="assets/img/mood-3-bureau.jpg" alt="" loading="lazy"></div>
+      <div class="skill rv feat" style="--d:0s"><span class="sk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><h3>Conception<br>artistique</h3><p>Concept, moodboard, DA, storytelling visuel</p><img class="sk-img" src="assets/img/mood-3-bureau.jpg" alt="" loading="lazy"></div>
       <div class="skill rv" style="--d:0.08s"><span class="sk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></span><h3>Branding<br>&amp; identité</h3><p>Univers visuel, logos, couleurs, typographies</p><img class="sk-img" src="assets/img/yozakura-kv.jpg" alt="" loading="lazy"></div>
       <div class="skill rv" style="--d:0.16s"><span class="sk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg></span><h3>Création<br>de contenu</h3><p>Idées, scripts, visuels statiques &amp; vidéos</p><img class="sk-img" src="assets/img/poster-rituals-mousse.jpg" alt="" loading="lazy"></div>
       <div class="skill rv" style="--d:0s"><span class="sk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M3 9h18M9 9v12"/></svg></span><h3>Mise<br>en page</h3><p>Édition, présentations, documents print &amp; digital</p><img class="sk-img" src="assets/img/yozakura-editorial.jpg" alt="" loading="lazy"></div>
@@ -275,27 +274,34 @@
 <footer class="contact" id="contact">
   <div class="mono" aria-hidden="true">CL.</div>
   <div class="wrap">
-    <div class="contact-top">
-      <div class="kicker rv">Contact</div>
-      <h2 data-split>J’aimerais rejoindre une équipe avec laquelle créer, apprendre et faire évoluer des&nbsp;idées.</h2>
-      <p class="it rv" style="--d:.3s">Et si nous imaginions la suite ensemble&#8239;?</p>
-      <div class="contact-actions rv" style="--d:.4s">
-        <a class="btn-big" href="mailto:celeste.lubrano04@gmail.com">Écrire à Céleste <span class="arr" aria-hidden="true">→</span></a>
-        <button class="btn-copy" type="button" data-copy="celeste.lubrano04@gmail.com"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/></svg><span>Copier l’adresse e-mail</span></button>
+    <div class="contact-grid">
+      <div class="contact-pitch">
+        <div class="kicker rv">Contact</div>
+        <h2 data-split>Et si nous imaginions la suite ensemble&#8239;?</h2>
+        <p class="rv" style="--d:.25s">J’aimerais rejoindre une équipe avec laquelle créer, apprendre et faire évoluer des&nbsp;idées.</p>
+        <div class="contact-actions rv" style="--d:.35s">
+          <a class="btn-big" href="mailto:celeste.lubrano04@gmail.com?subject=Contact%20depuis%20votre%20portfolio">Écrire à Céleste <span class="arr" aria-hidden="true">→</span></a>
+          <button class="btn-copy" type="button" data-copy="celeste.lubrano04@gmail.com"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/></svg><span>Copier l’adresse e-mail</span></button>
+        </div>
+        <p class="based rv" style="--d:.45s">Basée à Lyon, France</p>
+      </div>
+      <div class="contact-cards">
+        <a class="ccard rv" style="--d:.1s" href="mailto:celeste.lubrano04@gmail.com?subject=Contact%20depuis%20votre%20portfolio"><span class="cc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></span><span class="cc-txt"><span class="cc-lab">E-mail</span><span class="cc-val">celeste.lubrano04@gmail.com</span></span><span class="cc-go" aria-hidden="true">→</span></a>
+        <a class="ccard rv" style="--d:.2s" href="tel:+33641955420"><span class="cc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.5l1.8 4.5-2.3 1.4a11 11 0 0 0 5.6 5.6l1.4-2.3 4.5 1.8V18a2 2 0 0 1-2 2A15.5 15.5 0 0 1 3 5.5a2 2 0 0 1 2-2z"/></svg></span><span class="cc-txt"><span class="cc-lab">Téléphone</span><span class="cc-val">+33&nbsp;6&nbsp;41&nbsp;95&nbsp;54&nbsp;20</span></span><span class="cc-go" aria-hidden="true">→</span></a>
+        <a class="ccard rv" style="--d:.3s" href="https://www.linkedin.com/" target="_blank" rel="noopener"><span class="cc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10.5V17M8 7.2v.1M12 17v-3.8c0-1.6 1-2.7 2.4-2.7s2.1 1 2.1 2.7V17M12 10.5V17"/></svg></span><span class="cc-txt"><span class="cc-lab">LinkedIn</span><span class="cc-val">Céleste Lubrano</span></span><span class="cc-go" aria-hidden="true">↗</span></a>
       </div>
     </div>
-    <div class="contact-cards">
-      <a class="ccard rv" href="mailto:celeste.lubrano04@gmail.com"><span class="cc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></span><span class="cc-lab">E-mail</span><span class="cc-val">celeste.lubrano04@gmail.com</span><span class="cc-go" aria-hidden="true">→</span></a>
-      <a class="ccard rv" style="--d:.1s" href="tel:+33641955420"><span class="cc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.5l1.8 4.5-2.3 1.4a11 11 0 0 0 5.6 5.6l1.4-2.3 4.5 1.8V18a2 2 0 0 1-2 2A15.5 15.5 0 0 1 3 5.5a2 2 0 0 1 2-2z"/></svg></span><span class="cc-lab">Téléphone</span><span class="cc-val">+33&nbsp;6&nbsp;41&nbsp;95&nbsp;54&nbsp;20</span><span class="cc-go" aria-hidden="true">→</span></a>
-      <a class="ccard rv" style="--d:.2s" href="https://www.linkedin.com/" target="_blank" rel="noopener"><span class="cc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10.5V17M8 7.2v.1M12 17v-3.8c0-1.6 1-2.7 2.4-2.7s2.1 1 2.1 2.7V17M12 10.5V17"/></svg></span><span class="cc-lab">LinkedIn</span><span class="cc-val">Céleste Lubrano</span><span class="cc-go" aria-hidden="true">↗</span></a>
-    </div>
-    <p class="based rv">Basée à Lyon, France</p>
     <div class="footer">
       <b>CL.</b>
       <span>MERCI D’AVOIR PRIS LE TEMPS DE DÉCOUVRIR MON TRAVAIL.</span>
     </div>
   </div>
 </footer>
+
+<!-- Bulle de contact toujours visible -->
+<a class="bubble" href="#contact" aria-label="Me contacter">
+  <span class="bubble-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></span><span class="bubble-txt">Me contacter</span>
+</a>
 
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Lecteur vidéo">
   <button class="close" type="button" aria-label="Fermer la vidéo">✕</button>
