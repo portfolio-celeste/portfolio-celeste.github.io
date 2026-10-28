@@ -25,7 +25,7 @@
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Retour en haut">CL.</a>
     <nav class="nav" aria-label="Navigation principale">
-      <a href="#projets">Projets</a>
+      <div class="nav-drop"><a class="nav-drop-btn" href="#projets" aria-haspopup="true">Projets<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></a><div class="drop-menu"><a class="drop-item" href="projets/rituals-yozakura.html"><img src="assets/img/yozakura-kv.jpg" alt="" style="object-position:50% 62%"><span class="drop-num">01</span><span class="drop-name">Rituals Yozakura</span></a><a class="drop-item" href="projets/gisou.html"><img src="assets/img/gisou.jpg" alt="" style="object-position:50% 8%"><span class="drop-num">02</span><span class="drop-name">Gisou — The Nightmare</span></a><a class="drop-item" href="projets/beauty-content.html"><img src="assets/img/rituals-foam.jpg" alt="" style="object-position:50% 56%"><span class="drop-num">03</span><span class="drop-name">Beauty Content</span></a><a class="drop-item" href="projets/hotellerie-lifestyle.html"><img src="assets/img/restaurant.jpg" alt="" style="object-position:50% 50%"><span class="drop-num">04</span><span class="drop-name">Hôtellerie &amp; lifestyle</span></a><a class="drop-item" href="projets/baia.html"><img src="assets/img/baia-photos.jpg" alt="" style="object-position:50% 2%"><span class="drop-num">05</span><span class="drop-name">Baïa</span></a><a class="drop-item" href="projets/explorations-visuelles.html"><img src="assets/img/nuxe-ombre.jpg" alt="" style="object-position:50% 50%"><span class="drop-num">06</span><span class="drop-name">Explorations visuelles</span></a></div></div>
       <a href="#parcours">Parcours</a>
       <a href="#competences">Compétences</a>
       <a href="#contenus">Contenus</a>
@@ -101,8 +101,9 @@
 </section>
 
 <!-- ============ PARCOURS ============ -->
-<section class="section" id="parcours">
+<section class="section" data-sec="parcours">
   <div class="wrap">
+    <span class="anchor" id="parcours"></span>
     <div class="sec-head">
       <div class="sec-title rv"><h2>Mon parcours</h2></div>
       <div class="rule"></div>
@@ -134,8 +135,9 @@
 </section>
 
 <!-- ============ COMPÉTENCES ============ -->
-<section class="section" id="competences">
+<section class="section" data-sec="competences">
   <div class="wrap">
+    <span class="anchor" id="competences"></span>
     <div class="sec-head">
       <div class="sec-title rv"><h2>Mes compétences</h2></div>
       <div class="rule"></div>
@@ -153,8 +155,9 @@
 </section>
 
 <!-- ============ PROJETS ============ -->
-<section class="section" id="projets">
+<section class="section" data-sec="projets">
   <div class="wrap">
+    <span class="anchor" id="projets"></span>
     <div class="sec-head">
       <div class="sec-title rv"><h2>Projets sélectionnés</h2></div>
       <div class="rule"></div>
@@ -238,8 +241,9 @@
 </section>
 
 <!-- ============ CONTENUS (CARROUSEL) ============ -->
-<section class="section" id="contenus" data-carousel>
+<section class="section" data-sec="contenus" data-carousel>
   <div class="wrap">
+    <span class="anchor" id="contenus"></span>
     <div class="sec-head" style="margin-bottom:28px">
       <div class="sec-title rv"><h2>Posts &amp; vidéos</h2></div>
       <div class="rule"></div>
@@ -249,19 +253,19 @@
   <div class="car-wrap rv">
     <button class="car-arrow car-prev" type="button" data-prev aria-label="Publications précédentes"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
     <div class="carousel" role="region" aria-label="Carrousel de publications" tabindex="0">
-          <figure class="slide"><div class="zoom"><video data-auto muted loop playsinline preload="metadata" poster="assets/img/poster-rituals-mousse.jpg" src="assets/video/rituals-mousse.mp4"></video><button class="play" type="button" data-open-video="assets/video/rituals-mousse.mp4" aria-label="Regarder la vidéo Rituals avec le son"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="#F3EEE6"/></svg></button></div><figcaption><span class="cap-title">Rituals — A Cloud of Comfort</span><span class="tag tag-video">Vidéo</span></figcaption></figure>
-      <figure class="slide"><div class="zoom"><img src="assets/img/escarpins.jpg" alt="Parfum tenu entre deux escarpins argentés" loading="lazy"></div><figcaption><span class="cap-title">Étude produit</span><span class="tag tag-photo">Photo</span></figcaption></figure>
-      <figure class="slide"><div class="zoom"><video data-auto muted loop playsinline preload="metadata" poster="assets/img/poster-face-camera.jpg" src="assets/video/face-camera.mp4"></video><button class="play" type="button" data-open-video="assets/video/face-camera.mp4" aria-label="Regarder la vidéo routine face caméra avec le son"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="#F3EEE6"/></svg></button></div><figcaption><span class="cap-title">Routine — face caméra</span><span class="tag tag-video">Vidéo</span></figcaption></figure>
-      <figure class="slide"><div class="zoom"><video data-auto muted loop playsinline preload="metadata" poster="assets/img/poster-beauty-of-joseon.jpg" src="assets/video/beauty-of-joseon.mp4"></video><button class="play" type="button" data-open-video="assets/video/beauty-of-joseon.mp4" aria-label="Regarder la vidéo Beauty of Joseon avec le son"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="#F3EEE6"/></svg></button></div><figcaption><span class="cap-title">Beauty of Joseon — Light on Skin</span><span class="tag tag-video">Vidéo</span></figcaption></figure>
-      <figure class="slide"><div class="zoom"><img src="assets/img/sephora.jpg" alt="Rouges à lèvres Sephora dans une poche de jean" loading="lazy"></div><figcaption><span class="cap-title">Sephora — Pocket</span><span class="tag tag-photo">Photo</span></figcaption></figure>
-      <figure class="slide"><div class="zoom"><img src="assets/img/nuxe-main.jpg" alt="Huile Prodigieuse Nuxe tenue à la lumière" loading="lazy"></div><figcaption><span class="cap-title">Nuxe — Huile Prodigieuse</span><span class="tag tag-photo">Photo</span></figcaption></figure>
-      <figure class="slide"><div class="zoom"><video data-auto muted loop playsinline preload="metadata" poster="assets/img/poster-the-orange.jpg" src="assets/video/the-orange.mp4"></video><button class="play" type="button" data-open-video="assets/video/the-orange.mp4" aria-label="Regarder la vidéo thé saveur orange avec le son"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="#F3EEE6"/></svg></button></div><figcaption><span class="cap-title">Thé saveur orange</span><span class="tag tag-video">Vidéo</span></figcaption></figure>
-      <figure class="slide"><div class="zoom"><img src="assets/img/serum.jpg" alt="Sérum Aroma-Zone tenu dans des draps" loading="lazy"></div><figcaption><span class="cap-title">Aroma-Zone — Sérum</span><span class="tag tag-photo">Photo</span></figcaption></figure>
-      <figure class="slide"><div class="zoom"><video data-auto muted loop playsinline preload="metadata" poster="assets/img/poster-unboxing.jpg" src="assets/video/unboxing.mp4"></video><button class="play" type="button" data-open-video="assets/video/unboxing.mp4" aria-label="Regarder la vidéo unboxing avec le son"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="#F3EEE6"/></svg></button></div><figcaption><span class="cap-title">Unboxing</span><span class="tag tag-video">Vidéo</span></figcaption></figure>
-      <figure class="slide"><div class="zoom"><img src="assets/img/swatch.jpg" alt="Textures de crème sur un avant-bras" loading="lazy"></div><figcaption><span class="cap-title">Texture study</span><span class="tag tag-photo">Photo</span></figcaption></figure>
-      <figure class="slide"><div class="zoom"><video data-auto muted loop playsinline preload="metadata" poster="assets/img/poster-creme-unboxing.jpg" src="assets/video/creme-unboxing.mp4"></video><button class="play" type="button" data-open-video="assets/video/creme-unboxing.mp4" aria-label="Regarder la vidéo crème avec le son"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="#F3EEE6"/></svg></button></div><figcaption><span class="cap-title">Crème — unboxing</span><span class="tag tag-video">Vidéo</span></figcaption></figure>
-      <figure class="slide"><div class="zoom"><video data-auto muted loop playsinline preload="metadata" poster="assets/img/poster-gisou.jpg" src="assets/video/gisou.mp4"></video><button class="play" type="button" data-open-video="assets/video/gisou.mp4" aria-label="Regarder la vidéo Gisou avec le son"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="#F3EEE6"/></svg></button></div><figcaption><span class="cap-title">Gisou — The Nightmare</span><span class="tag tag-video">Vidéo</span></figcaption></figure>
-      <figure class="slide"><div class="zoom"><img src="assets/img/evian.jpg" alt="Brumisateur Evian dans un boîtier « En cas de canicule, brisez la glace »" loading="lazy"></div><figcaption><span class="cap-title">Evian — En cas de canicule</span><span class="tag tag-concept">Concept</span></figcaption></figure>
+          <figure class="slide"><div class="zoom" data-open data-cursor="VOIR"><video data-auto muted loop playsinline preload="metadata" poster="assets/img/poster-rituals-mousse.jpg" src="assets/video/rituals-mousse.mp4"></video><button class="play" type="button" data-open-video="assets/video/rituals-mousse.mp4" aria-label="Regarder la vidéo Rituals avec le son"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="#F3EEE6"/></svg></button></div><figcaption><span class="cap-title">Rituals — A Cloud of Comfort</span><span class="tag tag-video">Vidéo</span></figcaption></figure>
+      <figure class="slide"><div class="zoom" data-open data-cursor="VOIR"><img src="assets/img/escarpins.jpg" alt="Parfum tenu entre deux escarpins argentés" loading="lazy"></div><figcaption><span class="cap-title">Étude produit</span><span class="tag tag-photo">Photo</span></figcaption></figure>
+      <figure class="slide"><div class="zoom" data-open data-cursor="VOIR"><video data-auto muted loop playsinline preload="metadata" poster="assets/img/poster-face-camera.jpg" src="assets/video/face-camera.mp4"></video><button class="play" type="button" data-open-video="assets/video/face-camera.mp4" aria-label="Regarder la vidéo routine face caméra avec le son"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="#F3EEE6"/></svg></button></div><figcaption><span class="cap-title">Routine — face caméra</span><span class="tag tag-video">Vidéo</span></figcaption></figure>
+      <figure class="slide"><div class="zoom" data-open data-cursor="VOIR"><video data-auto muted loop playsinline preload="metadata" poster="assets/img/poster-beauty-of-joseon.jpg" src="assets/video/beauty-of-joseon.mp4"></video><button class="play" type="button" data-open-video="assets/video/beauty-of-joseon.mp4" aria-label="Regarder la vidéo Beauty of Joseon avec le son"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="#F3EEE6"/></svg></button></div><figcaption><span class="cap-title">Beauty of Joseon — Light on Skin</span><span class="tag tag-video">Vidéo</span></figcaption></figure>
+      <figure class="slide"><div class="zoom" data-open data-cursor="VOIR"><img src="assets/img/sephora.jpg" alt="Rouges à lèvres Sephora dans une poche de jean" loading="lazy"></div><figcaption><span class="cap-title">Sephora — Pocket</span><span class="tag tag-photo">Photo</span></figcaption></figure>
+      <figure class="slide"><div class="zoom" data-open data-cursor="VOIR"><img src="assets/img/nuxe-main.jpg" alt="Huile Prodigieuse Nuxe tenue à la lumière" loading="lazy"></div><figcaption><span class="cap-title">Nuxe — Huile Prodigieuse</span><span class="tag tag-photo">Photo</span></figcaption></figure>
+      <figure class="slide"><div class="zoom" data-open data-cursor="VOIR"><video data-auto muted loop playsinline preload="metadata" poster="assets/img/poster-the-orange.jpg" src="assets/video/the-orange.mp4"></video><button class="play" type="button" data-open-video="assets/video/the-orange.mp4" aria-label="Regarder la vidéo thé saveur orange avec le son"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="#F3EEE6"/></svg></button></div><figcaption><span class="cap-title">Thé saveur orange</span><span class="tag tag-video">Vidéo</span></figcaption></figure>
+      <figure class="slide"><div class="zoom" data-open data-cursor="VOIR"><img src="assets/img/serum.jpg" alt="Sérum Aroma-Zone tenu dans des draps" loading="lazy"></div><figcaption><span class="cap-title">Aroma-Zone — Sérum</span><span class="tag tag-photo">Photo</span></figcaption></figure>
+      <figure class="slide"><div class="zoom" data-open data-cursor="VOIR"><video data-auto muted loop playsinline preload="metadata" poster="assets/img/poster-unboxing.jpg" src="assets/video/unboxing.mp4"></video><button class="play" type="button" data-open-video="assets/video/unboxing.mp4" aria-label="Regarder la vidéo unboxing avec le son"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="#F3EEE6"/></svg></button></div><figcaption><span class="cap-title">Unboxing</span><span class="tag tag-video">Vidéo</span></figcaption></figure>
+      <figure class="slide"><div class="zoom" data-open data-cursor="VOIR"><img src="assets/img/swatch.jpg" alt="Textures de crème sur un avant-bras" loading="lazy"></div><figcaption><span class="cap-title">Texture study</span><span class="tag tag-photo">Photo</span></figcaption></figure>
+      <figure class="slide"><div class="zoom" data-open data-cursor="VOIR"><video data-auto muted loop playsinline preload="metadata" poster="assets/img/poster-creme-unboxing.jpg" src="assets/video/creme-unboxing.mp4"></video><button class="play" type="button" data-open-video="assets/video/creme-unboxing.mp4" aria-label="Regarder la vidéo crème avec le son"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="#F3EEE6"/></svg></button></div><figcaption><span class="cap-title">Crème — unboxing</span><span class="tag tag-video">Vidéo</span></figcaption></figure>
+      <figure class="slide"><div class="zoom" data-open data-cursor="VOIR"><video data-auto muted loop playsinline preload="metadata" poster="assets/img/poster-gisou.jpg" src="assets/video/gisou.mp4"></video><button class="play" type="button" data-open-video="assets/video/gisou.mp4" aria-label="Regarder la vidéo Gisou avec le son"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="#F3EEE6"/></svg></button></div><figcaption><span class="cap-title">Gisou — The Nightmare</span><span class="tag tag-video">Vidéo</span></figcaption></figure>
+      <figure class="slide"><div class="zoom" data-open data-cursor="VOIR"><img src="assets/img/evian.jpg" alt="Brumisateur Evian dans un boîtier « En cas de canicule, brisez la glace »" loading="lazy"></div><figcaption><span class="cap-title">Evian — En cas de canicule</span><span class="tag tag-concept">Concept</span></figcaption></figure>
     </div>
     <button class="car-arrow car-next" type="button" data-next aria-label="Publications suivantes"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
   </div>
@@ -306,6 +310,7 @@
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Lecteur vidéo">
   <button class="close" type="button" aria-label="Fermer la vidéo">✕</button>
   <video controls playsinline></video>
+  <img class="lb-img" alt="" hidden>
 </div>
 
 <script src="assets/js/main.js"></script>
