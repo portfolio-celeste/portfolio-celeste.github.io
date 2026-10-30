@@ -4,7 +4,7 @@
   if (!root) return;
   var scroller = root.querySelector('.m-scroller');
   var bar = root.querySelector('.m-bar');
-  var label = root.querySelector('.m-label');
+  var label = null;
   var chapters = Array.prototype.slice.call(root.querySelectorAll('.m-ch'));
   var segs = Array.prototype.slice.call(root.querySelectorAll('.m-seg'));
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
