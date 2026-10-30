@@ -19,7 +19,7 @@
   var goTo = function (id, smooth) {
     var t = document.getElementById(id);
     if (!t) return;
-    scroller.scrollTo({ top: t.offsetTop, behavior: smooth && !reduce ? 'smooth' : 'auto' });
+    scroller.scrollTo({ left: t.offsetLeft, behavior: smooth && !reduce ? 'smooth' : 'auto' });
   };
   root.querySelectorAll('[data-go]').forEach(function (a) {
     a.addEventListener('click', function (e) { e.preventDefault(); goTo(a.getAttribute('data-go'), true); });
@@ -32,6 +32,7 @@
     segs.forEach(function (s, k) { s.classList.toggle('done', k < i); s.classList.toggle('cur', k === i); });
     if (label) label.textContent = ch.getAttribute('data-label');
     bar.classList.toggle('dark', ch.getAttribute('data-tone') === 'dark');
+    var home = root.querySelector('.m-home'); if (home) home.classList.toggle('show', i > 0);
     rails.forEach(function (r) { r.update(); });
   };
 
@@ -69,6 +70,19 @@
     };
     var tick = false;
     rail.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(function () { tick = false; update(); }); } }, { passive: true });
+    var sx = null, atStart = false, atEnd = false;
+    rail.addEventListener('touchstart', function (e) {
+      sx = e.touches[0].clientX;
+      atStart = rail.scrollLeft <= 4;
+      atEnd = rail.scrollLeft >= rail.scrollWidth - rail.clientWidth - 4;
+    }, { passive: true });
+    rail.addEventListener('touchend', function (e) {
+      if (sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx; sx = null;
+      var i = chapters.indexOf(chapter);
+      if (atEnd && dx < -40 && chapters[i + 1]) goTo(chapters[i + 1].id, true);
+      else if (atStart && dx > 40 && chapters[i - 1]) goTo(chapters[i - 1].id, true);
+    }, { passive: true });
     rails.push({ update: update });
     update();
   });

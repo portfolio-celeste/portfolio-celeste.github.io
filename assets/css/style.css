@@ -643,10 +643,10 @@ main,[data-sec="contenus"],#manifeste{overflow-x:clip}
    ========================================================= */
 .m-stories{display:none}
 @media (max-width:760px){
-  body > :not(.m-stories):not(.lightbox):not(.curtain):not(script){display:none!important}
-  html,body{height:100%;overflow:hidden}
+  body.has-stories > :not(.m-stories):not(.lightbox):not(.curtain):not(script){display:none!important}
+  body.has-stories{height:100%;overflow:hidden}
   .m-stories{display:block;position:fixed;inset:0;z-index:50;background:var(--creme);color:var(--encre);--barH:calc(62px + env(safe-area-inset-top,0px))}
-  .m-scroller{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;scroll-snap-type:y mandatory;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .m-scroller{position:absolute;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .m-scroller::-webkit-scrollbar{display:none}
 
   /* barre façon stories */
@@ -665,8 +665,12 @@ main,[data-sec="contenus"],#manifeste{overflow-x:clip}
   .m-bar-cta{font-size:11px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--creme);background:var(--prune);padding:9px 14px;border-radius:999px;min-height:36px;display:flex;align-items:center}
   .m-bar.dark .m-bar-cta{background:var(--creme);color:var(--prune)}
 
+  /* bouton retour à l'accueil */
+  .m-home{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;width:48px;height:48px;border-radius:50%;border:1px solid var(--prune);background:var(--ivoire);color:var(--prune);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 26px -12px rgba(43,34,38,.6);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .4s,transform .5s var(--ease)}
+  .m-home.show{opacity:1;transform:none;pointer-events:auto}
+
   /* chapitres plein écran */
-  .m-ch{position:relative;height:100vh;height:100svh;scroll-snap-align:start;scroll-snap-stop:always;padding:calc(var(--barH) + 14px) max(18px,env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;justify-content:center;gap:clamp(12px,2.4svh,22px);overflow:hidden}
+  .m-ch{position:relative;flex:0 0 100%;width:100%;height:100vh;height:100svh;scroll-snap-align:start;scroll-snap-stop:always;padding:calc(var(--barH) + 14px) max(18px,env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;justify-content:center;gap:clamp(12px,2.4svh,22px);overflow:hidden}
   .m-ch[data-tone="dark"]{background:var(--prune);color:var(--creme)}
   .m-kick{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gris);margin:0}
   .m-ch[data-tone="dark"] .m-kick{color:var(--rose)}
@@ -692,12 +696,12 @@ main,[data-sec="contenus"],#manifeste{overflow-x:clip}
   .m-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%}
   .m-btn{display:flex;align-items:center;justify-content:center;min-height:50px;padding:0 12px;background:var(--prune);color:var(--creme);text-decoration:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--prune)}
   .m-btn.m-ghost{background:transparent;color:var(--prune)}
-  .m-hint{position:absolute;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;align-items:center;gap:8px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gris)}
-  .m-hint i{width:1px;height:26px;background:var(--prune);animation:mHint 1.8s var(--ease) infinite;transform-origin:bottom}
-  @keyframes mHint{0%{transform:scaleY(0);opacity:1}60%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
+  .m-hint{position:absolute;left:0;right:0;bottom:calc(18px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:row;justify-content:center;align-items:center;gap:10px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gris)}
+  .m-hint i{width:30px;height:1px;background:var(--prune);animation:mHint 1.8s var(--ease) infinite;transform-origin:left}
+  @keyframes mHint{0%{transform:scaleX(0);opacity:1}60%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1) translateX(8px);opacity:0}}
 
   /* rails glissés au doigt */
-  .m-rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(-1 * max(18px,env(safe-area-inset-left,0px)));padding:4px max(18px,env(safe-area-inset-left,0px));scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .m-rail{display:flex;gap:12px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;margin:0 calc(-1 * max(18px,env(safe-area-inset-left,0px)));padding:4px max(18px,env(safe-area-inset-left,0px));scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .m-rail::-webkit-scrollbar{display:none}
   .m-dots{display:flex;justify-content:center;gap:6px;flex-wrap:wrap}
   .m-dots button{width:7px;height:7px;padding:0;border:0;border-radius:999px;background:currentColor;opacity:.25;transition:width .4s var(--ease),opacity .4s;cursor:pointer}
