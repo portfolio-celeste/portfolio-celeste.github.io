@@ -618,6 +618,7 @@ main,[data-sec="contenus"],#manifeste{overflow-x:clip}
 .orbit .slide.is-active figcaption{opacity:1;transform:none}
 .orbit .slide:not(.is-active) .play{opacity:0;pointer-events:none}
 .orbit .slide.is-active [data-open]{cursor:zoom-in}
+.lightbox [hidden]{display:none!important}
 .car-wrap .car-arrow{top:calc(var(--card-w) * 16 / 18 + 10px)}
 .car-wrap .car-arrow.car-prev{left:calc(50% - var(--card-w) / 2 - 86px)}
 .car-wrap .car-arrow.car-next{right:calc(50% - var(--card-w) / 2 - 86px)}
@@ -627,6 +628,23 @@ main,[data-sec="contenus"],#manifeste{overflow-x:clip}
   .car-wrap .car-arrow.car-prev{left:8px}.car-wrap .car-arrow.car-next{right:8px}
   .to-top{bottom:calc(86px + env(safe-area-inset-bottom,0px));right:calc(18px + env(safe-area-inset-right,0px));width:48px;height:48px}
 }
+
+
+/* ---------- V6 : pages projets ---------- */
+.next h2{font-size:clamp(26px,3.2vw,48px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chain.one-line{flex-wrap:nowrap;white-space:nowrap;gap:10px 14px;font-size:clamp(15px,1.5vw,21px)}
+.p-hero-visual video{width:100%;height:100%;object-fit:cover}
+.p-hero-visual .play{position:absolute;left:18px;bottom:18px;width:56px;height:56px;border-radius:50%;background:rgba(43,34,38,.6);border:0;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .5s var(--ease),background .4s}
+.p-hero-visual:hover .play{transform:scale(1.12);background:var(--prune)}
+[data-open]{cursor:zoom-in}
+.lightbox [hidden]{display:none!important}
+.gallery figcaption.place{display:flex;flex-direction:column;gap:4px;text-transform:none;letter-spacing:0;color:var(--encre);margin-top:6px}
+.place b{font-weight:400;font-size:clamp(26px,2.6vw,36px);text-transform:uppercase;letter-spacing:.04em;color:var(--prune);line-height:1.1}
+.place span{font-size:17px;font-style:italic;color:#4A3D43}
+.place small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gris)}
+.stat-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;font-size:clamp(20px,2vw,26px);line-height:1.1;color:var(--encre)}
+.stat-line .stat{font-size:clamp(56px,7vw,104px)}
+.stat-line em{color:var(--prune-2)}
 
 /* Mouvement réduit (préférence système) */
 @media (prefers-reduced-motion:reduce){

@@ -301,7 +301,7 @@
         if (sl && sl.closest('.orbit') && !sl.classList.contains('is-active')) return;
         var btn = z.querySelector('[data-open-video]'), im = z.querySelector('img');
         if (btn) openMedia(btn, btn.getAttribute('data-open-video'));
-        else if (im) openMedia(z, im.currentSrc || im.src, im.src, im.alt);
+        else if (im) openMedia(z, null, im.currentSrc || im.src, im.alt);
       });
     });
     lb.querySelector('.close').addEventListener('click', close);
