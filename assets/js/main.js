@@ -319,6 +319,13 @@
     window.addEventListener('scroll', tt, { passive: true }); tt();
   }
 
+  /* Vidéos qui se lancent au survol (sans le son) */
+  document.querySelectorAll('video[data-hover-play]').forEach(function (v) {
+    var box = v.parentElement; v.muted = true;
+    box.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse' && !reduce) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } });
+    box.addEventListener('pointerleave', function () { v.pause(); });
+  });
+
   /* Copier l'adresse e-mail */
   document.querySelectorAll('[data-copy]').forEach(function (b) {
     var label = b.querySelector('span'), txt = label ? label.textContent : '';
