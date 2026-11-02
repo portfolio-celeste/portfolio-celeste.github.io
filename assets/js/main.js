@@ -358,8 +358,7 @@
     var pv = root.querySelector('[data-tt-prev]'), nx = root.querySelector('[data-tt-next]');
     if (pv) pv.addEventListener('click', function () { show(cur - 1); });
     if (nx) nx.addEventListener('click', function () { show(cur + 1); });
-    thumbs.forEach(function (b) { b.addEventListener('click', function () { show(+b.getAttribute('data-tt-go')); }); });
-    phone.addEventListener('wheel', function (e) { if (Math.abs(e.deltaY) < 20) return; e.preventDefault(); show(cur + (e.deltaY > 0 ? 1 : -1)); }, { passive: false });
+    thumbs.forEach(function (b) { b.addEventListener('click', function () { show(+b.getAttribute('data-tt-go')); var r = phone.getBoundingClientRect(); if (r.top < 0 || r.bottom > innerHeight) phone.scrollIntoView({ behavior: 'smooth', block: 'center' }); }); });
     phone.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowDown') { show(cur + 1); e.preventDefault(); }
       if (e.key === 'ArrowUp') { show(cur - 1); e.preventDefault(); }
