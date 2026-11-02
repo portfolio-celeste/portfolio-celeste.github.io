@@ -920,3 +920,4 @@ main,[data-sec="contenus"],#manifeste{overflow-x:clip}
   .p-footer > span a{font-size:11px;letter-spacing:.1em}
   .lightbox video,.lightbox .lb-img{max-height:78svh;margin-top:40px}
 }
+@media (max-width:760px){.p-page .boj-txt{order:-1}.p-page .boj-vid{order:1}.hero-quote.baia-stats p.caps{font-size:11px;letter-spacing:.14em;line-height:1.8!important}}
