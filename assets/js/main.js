@@ -326,6 +326,57 @@
     box.addEventListener('pointerleave', function () { v.pause(); });
   });
 
+  /* Téléphone façon TikTok (page Baïa) */
+  document.querySelectorAll('[data-tt]').forEach(function (phone) {
+    var root = phone.closest('.tt-wrap') || document;
+    var vids = Array.prototype.slice.call(phone.querySelectorAll('.tt-vid'));
+    var thumbs = Array.prototype.slice.call(root.querySelectorAll('[data-tt-go]'));
+    var count = root.querySelector('.tt-count b');
+    var bar = phone.querySelector('.tt-bar i');
+    var cur = 0, sound = false, visible = false, lock = false;
+    var play = function () {
+      vids.forEach(function (v, i) {
+        if (i === cur && visible) { v.muted = !sound; if (v.preload === 'none') v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        else v.pause();
+      });
+    };
+    var show = function (i) {
+      if (i < 0 || i >= vids.length || i === cur || lock) return;
+      lock = true; setTimeout(function () { lock = false; }, 650);
+      vids.forEach(function (v, k) { v.classList.toggle('on', k === i); v.classList.toggle('up', k < i); });
+      try { vids[i].currentTime = 0; } catch (e) {}
+      cur = i;
+      thumbs.forEach(function (b, k) { b.classList.toggle('on', k === i); });
+      if (count) count.textContent = i + 1;
+      play();
+    };
+    vids.forEach(function (v) {
+      v.addEventListener('timeupdate', function () { if (v === vids[cur] && v.duration) bar.style.width = (v.currentTime / v.duration * 100) + '%'; });
+    });
+    var toggleSound = function () { sound = !sound; phone.classList.toggle('sound', sound); var b = phone.querySelector('[data-tt-sound]'); if (b) b.setAttribute('aria-label', sound ? 'Couper le son' : 'Activer le son'); play(); };
+    phone.querySelector('.tt-screen').addEventListener('click', function (e) { if (swiped) return; toggleSound(); });
+    var pv = root.querySelector('[data-tt-prev]'), nx = root.querySelector('[data-tt-next]');
+    if (pv) pv.addEventListener('click', function () { show(cur - 1); });
+    if (nx) nx.addEventListener('click', function () { show(cur + 1); });
+    thumbs.forEach(function (b) { b.addEventListener('click', function () { show(+b.getAttribute('data-tt-go')); }); });
+    phone.addEventListener('wheel', function (e) { if (Math.abs(e.deltaY) < 20) return; e.preventDefault(); show(cur + (e.deltaY > 0 ? 1 : -1)); }, { passive: false });
+    phone.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') { show(cur + 1); e.preventDefault(); }
+      if (e.key === 'ArrowUp') { show(cur - 1); e.preventDefault(); }
+      if (e.key === ' ' || e.key === 'Enter') { toggleSound(); e.preventDefault(); }
+    });
+    var sy = null, swiped = false;
+    phone.addEventListener('touchstart', function (e) { sy = e.touches[0].clientY; swiped = false; }, { passive: true });
+    phone.addEventListener('touchmove', function (e) { if (sy !== null && Math.abs(e.touches[0].clientY - sy) > 10) e.preventDefault(); }, { passive: false });
+    phone.addEventListener('touchend', function (e) {
+      if (sy === null) return; var dy = e.changedTouches[0].clientY - sy; sy = null;
+      if (Math.abs(dy) > 40) { swiped = true; show(cur + (dy < 0 ? 1 : -1)); setTimeout(function () { swiped = false; }, 300); }
+    }, { passive: true });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (en) { visible = en[0].isIntersecting; play(); }, { threshold: 0.35 }).observe(phone);
+    } else { visible = true; play(); }
+  });
+
   /* Copier l'adresse e-mail */
   document.querySelectorAll('[data-copy]').forEach(function (b) {
     var label = b.querySelector('span'), txt = label ? label.textContent : '';
