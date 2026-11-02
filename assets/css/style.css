@@ -882,3 +882,41 @@ main,[data-sec="contenus"],#manifeste{overflow-x:clip}
 .baia-stats{margin-top:26px;gap:16px}
 .baia-stats .stat{font-size:clamp(56px,5.4vw,80px)}
 .baia-stats p:not(.stat-line):not(.caps){font-size:17px;line-height:1.65}
+
+/* V10 : version téléphone des pages projets */
+.m-only{display:none}
+.lightbox .close{z-index:5;top:calc(16px + env(safe-area-inset-top,0px));background:rgba(43,34,38,.7)}
+@media (max-width:760px){
+  .d-only{display:none!important}
+  .p-page .p-hero-visual.m-only{display:block;aspect-ratio:9/16;height:auto;width:100%}
+  .p-page .p-hero-grid{display:flex;flex-direction:column;gap:0;align-items:stretch;text-align:left}
+  .p-page .p-hero h1,.p-page .p-hero .p-sub,.p-page .p-hero .crumb{width:100%;text-align:left;margin-left:0;margin-right:0}
+  .blocks:not(.no-fold) .block.fold h3{font-size:15px;letter-spacing:.08em}
+  .p-page .p-hero-txt{display:contents}
+  .p-page .p-hero .crumb{order:1}
+  .p-page .p-hero h1{order:2}
+  .p-page .p-hero .p-sub{order:3}
+  .p-page .p-hero-visual{order:4;margin-top:22px;width:100%}
+  .p-page .p-hero-visual.is-916{width:100%;height:auto;aspect-ratio:9/16}
+  .p-page .p-hero .meta{order:5;margin-top:22px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .p-page .p-hero .meta div{padding:14px 0}
+  .p-page .p-hero .meta div+div{border-left:1px solid var(--ligne);padding-left:16px;border-top:0}
+  .p-page .p-hero .meta .meta-full{grid-column:1 / -1;border-left:0;padding-left:0;border-top:1px solid var(--ligne)}
+  .p-page .p-hero .hero-quote{order:6}
+  .p-page .sub-after .p-hero-visual{order:3;margin-top:18px}
+  .p-page .sub-after .p-sub{order:4;margin-top:18px}
+  .p-page .p-hero .hero-quote .quote{font-size:24px}
+  .blocks:not(.no-fold) .block.fold h3{cursor:pointer;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+  .blocks:not(.no-fold) .block.fold h3::before{flex:0 0 100%}
+  .blocks:not(.no-fold) .block.fold h3::after{content:"+";font-size:24px;line-height:1;color:var(--prune);transition:transform .4s var(--ease)}
+  .blocks:not(.no-fold) .block.fold.open h3::after{transform:rotate(45deg)}
+  .blocks:not(.no-fold) .block.fold p{display:none}
+  .blocks:not(.no-fold) .block.fold.open p{display:block}
+  .blocks:not(.no-fold){gap:22px}
+  .next h2{font-size:5vw;white-space:nowrap}
+  .p-footer{flex-direction:column;align-items:flex-start;gap:14px}
+  .p-footer > span{display:flex;flex-direction:column;gap:6px}
+  .p-footer .pf-dot{display:none}
+  .p-footer > span a{font-size:11px;letter-spacing:.1em}
+  .lightbox video,.lightbox .lb-img{max-height:78svh;margin-top:40px}
+}

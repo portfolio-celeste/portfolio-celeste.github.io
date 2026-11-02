@@ -277,7 +277,7 @@
     var lastBtn = null;
     var close = function () {
       lb.classList.remove('open'); lbVideo.pause(); lbVideo.removeAttribute('src'); lbVideo.load(); var li = lb.querySelector('.lb-img'); if (li) { li.hidden = true; li.removeAttribute('src'); }
-      if (lastBtn) lastBtn.focus();
+      if (lastBtn) try { lastBtn.focus({ preventScroll: true }); } catch (e) {}
     };
     var lbImg = lb.querySelector('.lb-img');
     var openMedia = function (from, video, img, alt) {
@@ -324,6 +324,15 @@
     var box = v.parentElement; v.muted = true;
     box.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse' && !reduce) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } });
     box.addEventListener('pointerleave', function () { v.pause(); });
+  });
+
+  /* Textes repliables sur téléphone */
+  document.querySelectorAll('.blocks:not(.no-fold) .block').forEach(function (bl) {
+    var h = bl.querySelector('h3'); if (!h) return;
+    bl.classList.add('fold'); h.setAttribute('role', 'button'); h.setAttribute('tabindex', '0'); h.setAttribute('aria-expanded', 'false');
+    var tg = function () { var o = bl.classList.toggle('open'); h.setAttribute('aria-expanded', o ? 'true' : 'false'); };
+    h.addEventListener('click', tg);
+    h.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tg(); } });
   });
 
   /* Téléphone façon TikTok (page Baïa) */
